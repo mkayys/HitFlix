@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './frontend/in_tents.jsx',
+    entry: './frontend/hit_flix.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         filename: 'bundle.js'
