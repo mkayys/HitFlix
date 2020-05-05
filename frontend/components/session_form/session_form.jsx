@@ -22,7 +22,9 @@ class SessionForm extends React.Component {
     }
 
     updateField(field) {
-        this.setState({ [field]: e.currentTarget.value })
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value })
+        }
     }
 
     render() {
@@ -32,14 +34,14 @@ class SessionForm extends React.Component {
                     <label>Email: 
                         <input type="email" 
                             value={this.state.email} 
-                            onChange={() => this.handleChange('email')}
+                            onChange={this.updateField('email')}
                             />
                     </label>
 
                     <label>Password: 
                         <input type="password" 
                             value={this.state.password} 
-                            onChange={() => this.handleChange('password')}
+                            onChange={this.updateField('password')}
                             />
                     </label>
 
