@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
-            .then(() => console.log('success'))
+            .then(() => this.props.history.push('/test'))
     }
 
     updateField(field) {
