@@ -7,6 +7,8 @@ class SessionForm extends React.Component {
             email: '',
             password: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateField = this.updateField.bind(this);
     }
 
     componentDidMount() {
@@ -15,7 +17,8 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+        this.props.processForm(this.state)
+            .then(() => console.log('success'))
     }
 
     updateField(field) {
@@ -40,7 +43,7 @@ class SessionForm extends React.Component {
                             />
                     </label>
 
-                    <input type="submit" value="Sign Up" />
+                    <input type="submit" value={this.props.type === 'Sign Up' ? 'Sign Up' : 'Sign In'} />
                 </form>
             </div>
         )
