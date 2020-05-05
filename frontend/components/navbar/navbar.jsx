@@ -1,32 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const NavBar = ({ currentUser, signOut }) => {
-    const sessionLinks = () => (
-        <div className="navbar">
-            <div className="logo">
-                HitFlix
-            </div>
-            <div className="user-interface">
-                <Link to="/login">Sign In</Link>
-                <Link to="/signup">Sign Up</Link>
-            </div>
-        </div>
-    )
+class NavBar extends React.Component{
+    constructor(props) {
+        super(props);
 
-    const welcome = () => (
-        <div className="navbar">
-            <div className="logo">
-                HitFlix
+        this.handleLogOut = this.handleLogOut.bind(this);
+    }
+
+    handleLogOut(e) {
+        e.preventDefault();
+        debugger;
+        this.props.signOut()
+            .then(() => this.props.history.push('/'))
+    }
+
+    render() {
+        const { currentUser } = this.props;
+        const sessionLinks = () => (
+            <div className="navbar">
+                <div className="logo">
+                    HitFlix
             </div>
-            <div className="user-interface">
-                <button onClick={signOut}>Sign Out</button>
+                <div className="user-interface">
+                    <Link to="/login">Sign In</Link>
+                    <Link to="/signup">Sign Up</Link>
+                </div>
             </div>
-        </div>
-    )
-    
-    return currentUser ? welcome() : sessionLinks()
+        )
+
+        const welcome = () => (
+            <div className="navbar">
+                <div className="logo">
+                    HitFlix
+            </div>
+                <div className="user-interface">
+                    <button onClick={this.handleLogOut}>Sign Out</button>
+                </div>
+            </div>
+        )
+
+        return currentUser ? welcome() : sessionLinks()
+    }
 };
 
-
-export default NavBar;
+export default withRouter(NavBar);
