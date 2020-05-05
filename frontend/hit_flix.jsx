@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { signUp, signIn, signOut } from './actions/session_actions';
 
+import Root from './components/root';
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const root = document.getElementById('root');
@@ -16,5 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signOut = signOut;
     //
 
-    ReactDOM.render(<h1>HitFlix</h1>, root)
+    ReactDOM.render(<Root store={store} />, root)
 })
