@@ -10,7 +10,6 @@ class NavBar extends React.Component{
 
     handleLogOut(e) {
         e.preventDefault();
-        debugger;
         this.props.signOut()
             .then(() => this.props.history.push('/'))
     }
@@ -18,29 +17,27 @@ class NavBar extends React.Component{
     render() {
         const { currentUser } = this.props;
         const sessionLinks = () => (
-            <div className="navbar">
-                <div className="logo">
-                    HitFlix
-            </div>
-                <div className="user-interface">
-                    <Link to="/login">Sign In</Link>
-                    <Link to="/signup">Sign Up</Link>
-                </div>
+            <div>
+                <Link to="/login">Sign In</Link>
+                <Link to="/signup">Sign Up</Link>
             </div>
         )
+  
 
         const welcome = () => (
+            <button onClick={this.handleLogOut}>Sign Out</button>
+        )
+
+        return (
             <div className="navbar">
                 <div className="logo">
-                    HitFlix
-            </div>
+                    <Link to="/">HitFlix</Link>
+                </div>
                 <div className="user-interface">
-                    <button onClick={this.handleLogOut}>Sign Out</button>
+                    {currentUser ? welcome() : sessionLinks()}
                 </div>
             </div>
         )
-
-        return currentUser ? welcome() : sessionLinks()
     }
 };
 
