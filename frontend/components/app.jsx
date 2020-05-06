@@ -6,6 +6,7 @@ import Splash from './main_page/splash';
 import NavBarContainer from './navbar/navbar_container';
 import SignUpContainer from './session_form/signup_container';
 import LogInContainer from './session_form/login_container';
+import MainPageContainer from './main_page/main_page_container';
 
 const App = () => (
     <div className="entire-web-page">
@@ -15,9 +16,9 @@ const App = () => (
         <Switch>
             <AuthRoute path="/login" component={LogInContainer} />
             <AuthRoute path="/signup" component={SignUpContainer} />
-            <ProtectedRoute path="/test" render={() => (<h1>YOU MADE IT</h1>)} />
-            {/* <Route path="/browse" component={MainPageContainer} /> */}
-            <Route exact path="/" component={Splash} />
+            {/* <Route path="/test" render={() => (<h1>YOU MADE IT</h1>)} /> */}
+            <ProtectedRoute path="/browse" component={MainPageContainer} />
+            <AuthRoute exact path="/" component={Splash} />
         </Switch>
     </div>
 );
