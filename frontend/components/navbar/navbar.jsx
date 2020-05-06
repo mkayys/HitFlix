@@ -17,7 +17,7 @@ class NavBar extends React.Component{
     render() {
         const { currentUser } = this.props;
         const sessionLinks = () => (
-            <div>
+            <div className="links">
                 <Link to="/login">Sign In</Link>
                 <Link to="/signup">Sign Up</Link>
             </div>
