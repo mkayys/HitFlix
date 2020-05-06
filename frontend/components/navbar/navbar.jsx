@@ -25,7 +25,12 @@ class NavBar extends React.Component{
   
 
         const welcome = () => (
-            <button onClick={this.handleLogOut}>Sign Out</button>
+            <div className="drpdwn">
+                USER ICON HERE
+                <div className="drpdwn-content">
+                    <button onClick={this.handleLogOut}>Sign Out</button>
+                </div>
+            </div>
         )
 
         return (
