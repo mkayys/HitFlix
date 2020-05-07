@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
+        this.showErrors = this.showErrors.bind(this);
     }
 
     componentDidMount() {
@@ -27,9 +28,18 @@ class SessionForm extends React.Component {
         }
     }
 
+    showErrors() {
+        return (
+            <div>
+                {this.props.errors}
+            </div>
+        )
+    }
+
     render() {
         return (
             <div className="user-form">
+                {this.showErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Email: 
                         <input type="email" 
