@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="user-form">
                 <form onSubmit={this.handleSubmit}>
                     <label>Email: 
                         <input type="email" 
