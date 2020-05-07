@@ -5,7 +5,8 @@ import { signIn } from '../../actions/session_actions';
 
 const mSTP = (state) => {
     return {
-        type: 'Sign In'
+        type: 'Sign In',
+        errors: state.errors.session
     }
 };
 
