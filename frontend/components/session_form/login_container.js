@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
-import SessionForm from './session_form';
+import LoginForm from './login';
 
 import { signIn, clearErrors } from '../../actions/session_actions';
 
 const mSTP = (state) => {
     return {
-        type: 'Sign In',
+        // type: 'Sign In',
         errors: state.errors.session
     }
 };
@@ -17,4 +17,4 @@ const mDTP = (dispatch) => {
     }
 };
 
-export default connect(mSTP, mDTP)(SessionForm);
+export default connect(mSTP, mDTP)(LoginForm);

@@ -1,11 +1,13 @@
 import { connect } from "react-redux";
-import SessionForm from './session_form';
+import SignupForm from './signup';
 
 import { signUp, clearErrors } from '../../actions/session_actions';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
+    debugger
     return {
-        type: 'Sign Up',
+        // type: 'Sign Up',
+        // email: ownProps.email,
         errors: state.errors.session
     }
 };
@@ -17,4 +19,4 @@ const mDTP = (dispatch) => {
     }
 };
 
-export default connect(mSTP, mDTP)(SessionForm);
+export default connect(mSTP, mDTP)(SignupForm);

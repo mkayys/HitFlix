@@ -36,6 +36,7 @@ class NavBar extends React.Component{
         return (
             <div className="navbar">
                 <div className="logo">
+                    {/* <img src={window.hitflix} /> */}
                     <Link to="/">HitFlix</Link>
                 </div>
                 <div className="user-interface">
