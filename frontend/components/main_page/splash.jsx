@@ -31,10 +31,9 @@ class Splash extends React.Component {
     }
 
     render() {
-        debugger
         return (
             <div>
-                <label for="email">Email Address:</label>
+                <label htmlFor="email">Email Address:</label>
                     <input type="email" 
                         id="email" 
                         onChange={this.updateEmail} />

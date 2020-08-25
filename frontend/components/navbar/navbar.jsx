@@ -19,7 +19,7 @@ class NavBar extends React.Component{
         const sessionLinks = () => (
             <div className="links">
                 <Link to="/login">Sign In</Link>
-                <Link to="/signup">Sign Up</Link>
+                {/* <Link to="/signup">Sign Up</Link> */}
             </div>
         )
   

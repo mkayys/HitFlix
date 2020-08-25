@@ -4,12 +4,13 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.email,
+            email: this.props.location.email,
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
         this.showErrors = this.showErrors.bind(this);
+        
     }
 
     componentDidMount() {
@@ -18,6 +19,7 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         this.props.processForm(this.state)
             .then(() => this.props.history.push('/browse'))
     }
@@ -37,26 +39,26 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <div className="user-form">
                 {this.showErrors()}
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email:
-                        <input type="email"
-                            value={this.state.email}
-                            onChange={this.updateField('email')}
-                        />
-                    </label>
+                    <label>Email:</label>
+                    <br />
+                    {this.state.email}
 
+                    <br />
                     <label>Password:
+                        <br />
                         <input type="password"
                             value={this.state.password}
                             onChange={this.updateField('password')}
                         />
                     </label>
 
-                    <input type="submit" value={this.props.type === 'Sign Up' ? 'Sign Up' : 'Sign In'} />
+                    <br />
+                    <input type="submit" value='Sign Up' />
                 </form>
             </div>
         )
