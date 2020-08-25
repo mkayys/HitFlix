@@ -14,12 +14,15 @@ import React from 'react';
 
 // export default Splash;
 
+import { Link } from 'react-router-dom';
+
 class Splash extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: ''
         }
+        this.updateEmail = this.updateEmail.bind(this);
     }
 
     updateEmail(e) {
@@ -28,16 +31,14 @@ class Splash extends React.Component {
     }
 
     render() {
-
+        debugger
         return (
             <div>
-                <form onSubmit={}>
-                    <label>
-                        <input type="email" 
-                            onChange={this.updateEmail} />
-                        <input type="submit" value="Sign Up" />
-                    </label>
-                </form>
+                <label for="email">Email Address:</label>
+                    <input type="email" 
+                        id="email" 
+                        onChange={this.updateEmail} />
+                <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link>
             </div>
         )
     }

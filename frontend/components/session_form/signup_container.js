@@ -3,8 +3,7 @@ import SignupForm from './signup';
 
 import { signUp, clearErrors } from '../../actions/session_actions';
 
-const mSTP = (state, ownProps) => {
-    debugger
+const mSTP = (state) => {
     return {
         // type: 'Sign Up',
         // email: ownProps.email,
