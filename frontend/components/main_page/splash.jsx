@@ -27,6 +27,7 @@ class Splash extends React.Component {
 
     updateEmail(e) {
         e.preventDefault();
+        localStorage.setItem('email', e.currentTarget.value);
         this.setState({ email: e.currentTarget.value });
     }
 
@@ -37,7 +38,8 @@ class Splash extends React.Component {
                     <input type="email" 
                         id="email" 
                         onChange={this.updateEmail} />
-                <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link>
+                {/* <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link> */}
+                <Link to='/signup'>Sign Up</Link>
             </div>
         )
     }

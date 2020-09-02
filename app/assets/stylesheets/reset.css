@@ -21,9 +21,9 @@ time, mark, audio, video {
   	font-family: inherit;
 	vertical-align: baseline;
 	/* color: inherit; */
-	/* color: white; */
+	color: white;
 	font-family: 'Open Sans', sans-serif;
-	/* background-color: black; */
+	background-color: black;
 }
 :focus {
   outline: 0;
@@ -67,8 +67,11 @@ textarea
 	line-height:1;
 	
 	/* Browsers have different default form fonts */
-	font-size:13px;
-	font-family:Arial;
+	/* font-size:13px;
+	font-family:Arial; */
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	background-color: white;
 }
 
 /* Remove the stupid outer glow in Webkit */

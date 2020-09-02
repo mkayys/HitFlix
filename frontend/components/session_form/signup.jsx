@@ -4,7 +4,8 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.location.email,
+            // email: this.props.location.email,
+            email: localStorage.getItem('email'),
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +20,8 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        // debugger
+        localStorage.removeItem('email');
         this.props.processForm(this.state)
             .then(() => this.props.history.push('/browse'))
     }
@@ -41,7 +43,7 @@ class SignupForm extends React.Component {
     render() {
         // debugger
         return (
-            <div className="user-form">
+            <div className="signup-form">
                 {this.showErrors()}
                 <form onSubmit={this.handleSubmit}>
                     <label>Email:</label>
