@@ -1,13 +1,31 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    // border: 1px solid black;
+    padding: 20px 30px;
+    background: linear-gradient(black, transparent)
 }
 
-.logo {
-    color: red;
-}
+// .logo {
+//     color: red;
+// }
 
 .user-interface {
-    border: 1px solid red;
+    // border: 1px solid red;
+}
+
+.links a {
+    text-decoration: none;
+    background-color: red;
+    padding: 5px 6px;
+}
+// .navbar a {
+//     text-decoration: none;
+//     background-color: red;
+//     padding: 5px 6px;
+// }
+
+.logo img {
+    // height: 100px;
+    // width: 200px;
 }

@@ -33,7 +33,7 @@ class Splash extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="splash-container">
                 <label htmlFor="email">Email Address:</label>
                     <input type="email" 
                         id="email" 

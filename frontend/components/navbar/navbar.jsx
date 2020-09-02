@@ -35,13 +35,15 @@ class NavBar extends React.Component{
 
         return (
             <div className="navbar">
-                <div className="logo">
-                    {/* <img src={window.hitflix} /> */}
+                <div className="logo" 
+                    // onClick={() => this.props.history.push('/')}  
+                    >
+                    {/* <img src={window.logo} /> */}
                     <Link to="/">HitFlix</Link>
                 </div>
-                <div className="user-interface">
+                {/* <div className="user-interface"> */}
                     {currentUser ? welcome() : sessionLinks()}
-                </div>
+                {/* </div> */}
             </div>
         )
     }
