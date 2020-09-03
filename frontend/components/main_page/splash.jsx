@@ -34,12 +34,18 @@ class Splash extends React.Component {
     render() {
         return (
             <div className="splash-container">
-                <label htmlFor="email">Email Address:</label>
-                    <input type="email" 
-                        id="email" 
-                        onChange={this.updateEmail} />
-                {/* <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link> */}
-                <Link to='/signup'>Sign Up</Link>
+                <img className="splash-background" src={window.home} alt=""/>
+                <div className='overlay-card'>
+                    {/* <div className="get-started"> */}
+                        {/* <label htmlFor="email">Email Address:</label> */}
+                            <input type="email" 
+                                id="email" 
+                                placeholder="Email Address"
+                                onChange={this.updateEmail} />
+                        {/* <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link> */}
+                        <Link to='/signup'>Get Started</Link>
+                    {/* </div> */}
+                </div>
             </div>
         )
     }
