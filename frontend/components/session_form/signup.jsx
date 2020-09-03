@@ -11,7 +11,7 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateField = this.updateField.bind(this);
         this.showErrors = this.showErrors.bind(this);
-        
+        this.revealEmailField = this.revealEmailField.bind(this);
     }
 
     componentDidMount() {
@@ -36,11 +36,33 @@ class SignupForm extends React.Component {
     }
 
     showErrors() {
+        // debugger
+        if (this.props.errors.length === 0) return;
         return (
             <div className="errors">
-                {this.props.errors}
+                {this.props.errors.map(error => {
+                    return (
+                        <div>{error}</div>
+                    )
+                })}
             </div>
         )
+    }
+
+    revealEmailField() {
+        if (this.props.errors.length === 0 || !this.props.errors[0].includes("Email")) {
+            return this.state.email;
+        } else {
+            return (
+                <input type="text"
+                    id="signup-info"
+                    value={this.state.email}
+                    placeholder="Enter another email"
+                    onChange={this.updateField("email")}
+                    />
+            )
+        }
+
     }
 
     render() {
@@ -51,11 +73,13 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Email</label>
                     <br />
-                    {this.state.email}
+                    {/* {this.state.email} */}
+                    {this.revealEmailField()}
 
                     <br />
                         <br />
                         <input type="password"
+                            id="signup-info"
                             value={this.state.password}
                             placeholder="Enter your password"
                             onChange={this.updateField('password')}

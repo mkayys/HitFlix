@@ -9,10 +9,16 @@
     font-size: 10px;
 }
 
-.signup-form input[type=password] {
+// .signup-form input[type=password] {
+//     border: 1px solid #8C8C8C;
+//     padding: 10px;
+//     // padding-right: 100px;
+//     width: 75%;
+// }
+
+#signup-info {
     border: 1px solid #8C8C8C;
     padding: 10px;
-    // padding-right: 100px;
     width: 75%;
 }
 
@@ -30,4 +36,6 @@
     color: white;
     padding: 10px;
     cursor: pointer;
+    width: 75%;
+    font-size: 10px;
 }
