@@ -21,9 +21,12 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger
-        localStorage.removeItem('email');
+        
         this.props.processForm(this.state)
-            .then(() => this.props.history.push('/browse'))
+            .then(() => {
+                localStorage.removeItem('email');
+                this.props.history.push('/browse')
+            })
     }
 
     updateField(field) {
@@ -34,7 +37,7 @@ class SignupForm extends React.Component {
 
     showErrors() {
         return (
-            <div>
+            <div className="errors">
                 {this.props.errors}
             </div>
         )
@@ -46,21 +49,20 @@ class SignupForm extends React.Component {
             <div className="signup-form">
                 {this.showErrors()}
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email:</label>
+                    <label>Email</label>
                     <br />
                     {this.state.email}
 
                     <br />
-                    <label>Password:
                         <br />
                         <input type="password"
                             value={this.state.password}
+                            placeholder="Enter your password"
                             onChange={this.updateField('password')}
                         />
-                    </label>
 
                     <br />
-                    <input type="submit" value='Sign Up' />
+                    <input type="submit" value='SIGN UP' />
                 </form>
             </div>
         )

@@ -20,9 +20,11 @@ class Splash extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: ''
+            email: '',
+            errors: ''
         }
         this.updateEmail = this.updateEmail.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     updateEmail(e) {
@@ -31,20 +33,36 @@ class Splash extends React.Component {
         this.setState({ email: e.currentTarget.value });
     }
 
+    handleClick(e) {
+        e.preventDefault();
+        if (this.state.email !== "") {
+            this.props.history.push('/signup');
+        } else {
+            this.setState({ errors: 'Email is required!'})
+        }
+    }
+
     render() {
         return (
             <div className="splash-container">
                 <img className="splash-background" src={window.home} alt=""/>
                 <div className='overlay-card'>
-                    {/* <div className="get-started"> */}
+                    
+                    <div className="get-started">
+                        <div>Unlimited movies, TV shows, and more.</div>
+                        <div>Watch anywhere. Cancel anytime.</div>
+                        <div>Ready to watch? Enter your email to begin your adventure.</div>
                         {/* <label htmlFor="email">Email Address:</label> */}
                             <input type="email" 
                                 id="email" 
                                 placeholder="Email Address"
                                 onChange={this.updateEmail} />
                         {/* <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link> */}
-                        <Link to='/signup'>Get Started</Link>
-                    {/* </div> */}
+                    {/* <Link to='/signup'>Get Started</Link> */}
+                    <button onClick={this.handleClick}>Get Started</button>
+                    <br />
+                    <div className="error-message">{this.state.errors}</div>
+                    </div>
                 </div>
             </div>
         )
