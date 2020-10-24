@@ -4,34 +4,44 @@
     justify-content: space-between;
     position: absolute;
     padding: 20px 30px;
-    align-content: center;
     height: 90px;
     width: 100vw;
-    // background: linear-gradient(black, 70%, transparent);
     background: transparent;
+    align-items: center;
+    z-index: 1;
 }
 
-.logo a {
-    color: white;
+.logo {
+    height: auto;
+    font-size: 25px;
+    a {
+        color: white;
+    }
 }
 
 .user-interface {
     // border: 1px solid red;
 }
 
-.links a {
-    text-decoration: none;
-    background-color: red;
-    padding: 5px 15px;
-    color: white;
-    border-radius: 5px;
-    font-size: 13px;
+.links {
+    display: flex;
+    height: 30px;
+
+    a {
+        &:hover {
+            background-color: #f40612;;
+        }
+        text-decoration: none;
+        background-color: #e50914;;
+        padding: 5px 15px;
+        color: white;
+        border-radius: 5px;
+        font-size: 13px;
+        align-items: center;
+        display: flex;
+    }
 }
-// .navbar a {
-//     text-decoration: none;
-//     background-color: red;
-//     padding: 5px 6px;
-// }
+
 
 .logo img {
     // height: 100px;

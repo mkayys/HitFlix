@@ -50,7 +50,10 @@
 }
 
 .overlay-card button {
-  background-color: red;
+  &:hover {
+    background-color: #f40612;;
+  }
+  background-color: #e50914;;
   padding: 10px;
   margin-left: 1px;
   color: white;
