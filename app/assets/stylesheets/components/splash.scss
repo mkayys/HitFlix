@@ -25,25 +25,45 @@
 }
 
 .overlay-card {
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,0.6);
   position: absolute;
-  // z-index: 5;
-  top: 9%;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-// .get-started {
-// }
+.get-started {
+  width: 62%;
+  h1 {
+    font-size: 3.125rem;
+  }
+  h2 {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+}
+
+.get-started > * {
+  margin: 16px;
+}
+
 .overlay-card button {
   background-color: red;
-  padding: 13px;
+  padding: 10px;
   margin-left: 1px;
   color: white;
+  border-radius: 0 2px 2px 0;
+  height: 50px;
 }
 
 #email {
   padding: 10px;
+  border-radius: 2px 0 0 2px;
+  height: 30px;
+  width: 50%;
+  margin: 0;
 }
 
 .error-message {

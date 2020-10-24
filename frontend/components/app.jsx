@@ -10,9 +10,8 @@ import MainPageContainer from './main_page/main_page_container';
 
 const App = () => (
     <div className="entire-web-page">
-        <div className="navbar-container">
-            <NavBarContainer />
-        </div>
+
+        <NavBarContainer />
         <Switch>
             <AuthRoute path="/login" component={LogInContainer} />
             <AuthRoute path="/signup" component={SignUpContainer} />

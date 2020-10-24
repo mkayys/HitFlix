@@ -49,9 +49,9 @@ class Splash extends React.Component {
                 <div className='overlay-card'>
                     
                     <div className="get-started">
-                        <div>Unlimited movies, TV shows, and more.</div>
-                        <div>Watch anywhere. Cancel anytime.</div>
-                        <div>Ready to watch? Enter your email to begin your adventure.</div>
+                        <h1>Unlimited movies, TV shows, and more.</h1>
+                        <h2>Watch anywhere. Cancel anytime.</h2>
+                        <h2>Ready to watch? Enter your email to begin your adventure.</h2>
                         {/* <label htmlFor="email">Email Address:</label> */}
                             <input type="email" 
                                 id="email" 
@@ -60,7 +60,6 @@ class Splash extends React.Component {
                         {/* <Link to={{ pathname: '/signup', email: this.state.email }}>Sign Up</Link> */}
                     {/* <Link to='/signup'>Get Started</Link> */}
                     <button onClick={this.handleClick}>Get Started</button>
-                    <br />
                     <div className="error-message">{this.state.errors}</div>
                     </div>
                 </div>
