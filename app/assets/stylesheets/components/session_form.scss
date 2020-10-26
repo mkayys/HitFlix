@@ -4,6 +4,50 @@
     color: black;
 }
 
-.login-form {
-    display: block;
+.login-form-container {
+    // display: block;
+    position: absolute;
+    /* top: 90px; */
+    height: 100vh;
+    width: 100vw;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0,0,0,0.7);
+    
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        height: 25%;
+        justify-content: space-around;
+        margin: auto;
+        height: 100%;
+        padding: 92px;
+
+        h1 {
+            text-align: left;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        input {
+            background-color: #333;
+            padding: 16px;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+
+        input[type=submit] {
+            background-color: #e50914;
+            padding: 15px;
+            /* text-align: center; */
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            
+        }
+    }
 }

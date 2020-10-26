@@ -38,26 +38,38 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form">
-                {this.showErrors()}
-                <form onSubmit={this.handleSubmit}>
-                    <label>Email: 
-                        <input type="email" 
-                            value={this.state.email} 
-                            onChange={this.updateField('email')}
-                            />
-                    </label>
 
-                    <label>Password: 
-                        <input type="password" 
-                            value={this.state.password} 
-                            onChange={this.updateField('password')}
-                            />
-                    </label>
+            <div className="splash-container">
+                <img className="splash-background" src={window.home} alt=""/>
+                <div className='overlay-card'>
+                    <div className="login-form-container">
+                        
+                        <form className="login-form" onSubmit={this.handleSubmit}>
+                            <h1>Sign In</h1>
+                            {/* <label>Email: */}
+                                <input type="email"
+                                            value={this.state.email}
+                                            onChange={this.updateField('email')}
+                                            placeholder="Email"
+                                        />
+                            {/* </label> */}
 
-                    <input type="submit" value='Sign In' />
-                </form>
+                            {/* <label>Password: */}
+                                <input type="password"
+                                            value={this.state.password}
+                                            onChange={this.updateField('password')}
+                                            placeholder="Password"
+                                        />
+                            {/* </label> */}
+
+                            {this.showErrors()}
+                            <input type="submit" value='Sign In' />
+                        </form>
+                    </div>
+                    
+                </div>
             </div>
+
         )
     }
 };
